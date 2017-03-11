@@ -1,0 +1,4 @@
+message Record
+{
+required int32 id = 1;
+}

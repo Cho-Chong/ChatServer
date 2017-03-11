@@ -28,9 +28,9 @@
 #define SERVER_MSG ("Hello, World!")
 static const unsigned int RECEIVE_TIMEOUT = 5;
 
-ChatServer::ChatServer()
+ChatServer::ChatServer(ChatLib::Interface::IIODevice* iodevice)
 {
-    
+    StreamPacketDriver = new ChatLib::PacketDriver(iodevice);
 }
 
 ChatServer::~ChatServer()
@@ -183,11 +183,11 @@ void ChatServer::Receive()
                 }
                 else
                 {
-                    if(StreamPacketDriver.RecvPacket(i) == ChatLib::PACKET_FAILURE)
+                    if(StreamPacketDriver->RecvPacket(i) == ChatLib::PACKET_FAILURE)
                     {
                         FD_CLR(i, &this->MasterFds);
                         
-                        StreamPacketDriver.CleanSocket(i);
+                        StreamPacketDriver->CleanSocket(i);
                         printf("Disconnecting from socket %d\n", i);
                         //TODO: reset fdmax
                     }
@@ -204,7 +204,7 @@ void ChatServer::BroadCast()
     
     do
     {
-        StreamPacketDriver.DequeuePacket(packet);
+        StreamPacketDriver->DequeuePacket(packet);
         
         if(packet.header.length > 0)
         {
@@ -214,7 +214,7 @@ void ChatServer::BroadCast()
             // we got some data from a client
             for(int j = 0; j <= FdMax; j++) {
                 if (FD_ISSET(j, &this->MasterFds) && j != listener) {
-                    StreamPacketDriver.QueuePacket(j, packet);
+                    StreamPacketDriver->QueuePacket(j, packet);
                 }
             }
         }
@@ -228,7 +228,7 @@ void ChatServer::Transmit()
     for(int j = 0; j <= FdMax; j++) {
         // except the listener and ourselves
         if (FD_ISSET(j, &this->MasterFds) && j != listener) {
-            StreamPacketDriver.SendPackets(j);
+            StreamPacketDriver->SendPackets(j);
         }
     }
 }

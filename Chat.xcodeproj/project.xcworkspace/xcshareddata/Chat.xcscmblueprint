@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CAF8ACB1D0A59747DE8CD74DD218B97F7CABE829",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FD9A6E348A62FE04FE4E419E520D59AF3FD0F9BE" : 0,
+    "CAF8ACB1D0A59747DE8CD74DD218B97F7CABE829" : 0,
+    "4E188F13C7A6535950D0F40B265E646F0CA97864" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "50E1C7C0-D82A-491D-A3D2-07423644FD52",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FD9A6E348A62FE04FE4E419E520D59AF3FD0F9BE" : "ChatClient\/",
+    "CAF8ACB1D0A59747DE8CD74DD218B97F7CABE829" : "Chat\/",
+    "4E188F13C7A6535950D0F40B265E646F0CA97864" : "ChatLib\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Chat",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Chat.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cho-chong\/protocol.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4E188F13C7A6535950D0F40B265E646F0CA97864"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cho-chong\/chatserver.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CAF8ACB1D0A59747DE8CD74DD218B97F7CABE829"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cho-chong\/chatclient.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD9A6E348A62FE04FE4E419E520D59AF3FD0F9BE"
+    }
+  ]
+}

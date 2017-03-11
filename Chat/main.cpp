@@ -11,12 +11,15 @@
 #include "Record.hpp"
 #include "DataStore.hpp"
 #include "Threads.hpp"
+#include "TcpDevice.h"
 
 #define FOREVER while(true)
 
-static ChatServer server;
+static ChatLib::TcpDevice tcpDevice;
+static ChatServer server(&tcpDevice);
 static DataStore datastore;
 
+//TODO: move threads to cpp
 void* BroadCastPackets(void *thread_id)
 {
     //TODO: use semaphore driven threading or periodic tasking library if available

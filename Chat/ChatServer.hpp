@@ -16,7 +16,7 @@
 class ChatServer
 {
 public:
-    ChatServer();
+    ChatServer(ChatLib::Interface::IIODevice* iodevice);
     ~ChatServer();
     
     
@@ -28,7 +28,7 @@ private:
     void Initialize();
     static void sigchld_handler(int s);
     void *get_in_addr(struct sockaddr *sa);
-    ChatLib::PacketDriver StreamPacketDriver;
+    ChatLib::PacketDriver* StreamPacketDriver;
     int listener;
     fd_set MasterFds;
     int FdMax;
